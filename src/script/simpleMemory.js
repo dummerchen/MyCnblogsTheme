@@ -91,13 +91,13 @@ if (initCheck()) {
         '<div id="rightMenu"></div>';
 
     window.cnblogsConfigDefault = {
-        GhUserName: 'BNDong',
+        GhUserName: 'dummerchen',
         GhRepositories: 'Cnblogs-Theme-SimpleMemory',
-        GhVersions: 'v1.3.0',
+        GhVersions: 'master',
         CnVersions: "",
-        blogUser: "",
-        blogAvatar: "",
-        blogStartDate: "2019-01-01",
+        blogUser: "Sakura Momoko",
+        blogAvatar: "https://gitee.com/dummerchen/MY_IMAGE_BED/raw/master/20201018134428.jpg",
+        blogStartDate: "2020-01-01",
         menuCustomList: {},
         menuNavList: [],
         menuUserInfoBgImg: '',
@@ -174,15 +174,15 @@ if (initCheck()) {
             animateSections: true
         },
         homeTopImg: [
-            "https://cdn.jsdelivr.net/gh/BNDong/Cnblogs-Theme-SimpleMemory@master/img/webp/home_top_bg.webp"
+            "https://images.cnblogs.com/cnblogs_com/cherrypill/1617340/o_20101313040283092647_p0_master1200.jpg"
         ],
         homeBannerText: "",
         homeBannerTextType: "jinrishici",
         essayTopImg: [
-            "https://cdn.jsdelivr.net/gh/BNDong/Cnblogs-Theme-SimpleMemory@master/img/webp/nothome_top_bg.webp"
+            "https://images.cnblogs.com/cnblogs_com/cherrypill/1617340/o_2003111307191.jpg"
         ],
-        essayCodeHighlightingType: 'cnblogs',
-        essayCodeHighlighting: '',
+        essayCodeHighlightingType: 'highlightjs',
+        essayCodeHighlighting: 'monokai-sublime',
         essayCodeLanguages: [],
         essayCode: {
             fontFamily: "'Ubuntu Mono',monospace",
@@ -213,7 +213,7 @@ if (initCheck()) {
         themeAuthor: false,
         isVersionMapping: false,
         switchDayNight: {
-            enable: true,
+            enable: false,
             auto: {
                 enable: false,
                 dayHour: 5,
