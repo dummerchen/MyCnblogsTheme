@@ -92,7 +92,7 @@ if (initCheck()) {
 
     window.cnblogsConfigDefault = {
         GhUserName: 'dummerchen',
-        GhRepositories: 'Cnblogs-Theme-SimpleMemory',
+        GhRepositories: 'MyCnblogsTheme',
         GhVersions: 'master',
         CnVersions: "",
         blogUser: "Sakura Momoko",
