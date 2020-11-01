@@ -1269,10 +1269,11 @@ function Base() {
      * 设置非主页头图
      */
     this.setNotHomeTopImg = function() {
-
-        let essayTopImg = window.cnblogsConfig.essayTopImg,
-            bgImg;
-
+        // 将非主页头图改为和主页相同
+        // let essayTopImg = window.cnblogsConfig.essayTopImg,
+        //     bgImg;
+        let essayTopImg = window.cnblogsConfig.homeTopImg,
+        bgImg;
         essayTopImg.length > 0 ?
             (essayTopImg.length > 1 ? bgImg = essayTopImg[tools.randomNum(0, essayTopImg.length - 1)] : bgImg = essayTopImg[0])
             : bgImg = "";
@@ -1465,7 +1466,10 @@ function Base() {
 
         // 使用 highlightjs 代码样式
         function highlightjsCode() {
+            //tools.dynamicLoadingCss('https://cdn.jsdelivr.net/gh/'+(window.cnblogsConfig.GhUserName)+'/'+(window.cnblogsConfig.GhRepositories)+'@'+(window.cnblogsConfig.GhVersions)+'/src/style/highlightjs/'+hltheme+'.min.css');
+            // 去掉@获取最新版本
             tools.dynamicLoadingCss('https://cdn.jsdelivr.net/gh/'+(window.cnblogsConfig.GhUserName)+'/'+(window.cnblogsConfig.GhRepositories)+'@'+(window.cnblogsConfig.GhVersions)+'/src/style/highlightjs/'+hltheme+'.min.css');
+
             require(['highlightjs'], function() {
                 let essayCodeLanguages = window.cnblogsConfig.essayCodeLanguages;
                 if (essayCodeLanguages && essayCodeLanguages.length > 0) {
