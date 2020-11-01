@@ -1285,7 +1285,7 @@ function Base() {
         });
 
         $('#homeTopTitle').hide();
-        $('.scroll-down').hide();
+        //$('.scroll-down').hide();
         $('#home').css('margin-top', '40vh');
         $('#cb_post_title_url').addClass('post-del-title');
 
