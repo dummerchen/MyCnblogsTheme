@@ -432,7 +432,10 @@ function init() {
 // get file url
 function getJsDelivrUrl(file, directory) {
     file = setFileNameMin(file, directory);
-    return 'https://cdn.jsdelivr.net/gh/'+(window.cnblogsConfig.GhUserName)+'/'+(window.cnblogsConfig.GhRepositories)+'/' + (file ? file : '');
+    // 好像还没@master好用
+    // return 'https://cdn.jsdelivr.net/gh/'+(window.cnblogsConfig.GhUserName)+'/'+(window.cnblogsConfig.GhRepositories)+'/' + (file ? file : '');
+
+    return 'https://cdn.jsdelivr.net/gh/'+(window.cnblogsConfig.GhUserName)+'/'+(window.cnblogsConfig.GhRepositories)+'@'+window.cnblogsConfig.GhVersions+'/' + (file ? file : '');
 }
 
 // optimization file name
