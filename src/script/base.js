@@ -908,7 +908,7 @@ function Base() {
             (homeTopImg.length > 1 ? bgImg = homeTopImg[tools.randomNum(0, homeTopImg.length - 1)] : bgImg = homeTopImg[0])
             : bgImg = "";
         $('.main-header').css({
-            'background': '#222 url("'+encodeURI(bgImg)+'")  center center no-repeat',
+            'background': 'url("'+encodeURI(bgImg)+'")  center center no-repeat',
             'background-size': 'cover'
         });
 
@@ -1127,6 +1127,12 @@ function Base() {
         bndongJs.setCodeHighlighting();
         bndongJs.baguetteBox();
 
+        //设置滚动
+        $('.scroll-down').click(function () {
+            let endScroll;
+            console.log("???");
+            endScroll = $('#home').offset().top + 10; tools.actScroll(endScroll, 1000);});
+            
         // 初始化文章目录
         require(['title', 'marvin', 'articleStatement'], function() {
             timeIds.setCatalogTId = window.setInterval( bndongJs.initCatalog, 1000 );
@@ -1136,10 +1142,8 @@ function Base() {
                 axis:"yx"
             });
         });
-        //设置滚动
-        $('.scroll-down').click(function () {
-            let endScroll;
-            endScroll = $('#home').offset().top + 10; tools.actScroll(endScroll, 1000);});
+        
+        
         // 设置右下角菜单
         timeIds.setNotHomeRightMenuTId = window.setInterval( bndongJs.addNotHomeRightMenu, 1000 );
 
@@ -1273,7 +1277,7 @@ function Base() {
 
         $('.main-header').css({
             'height': '40vh',
-            'background': '#222 url("'+encodeURI(bgImg)+'")  center center no-repeat',
+            'background': 'url("'+encodeURI(bgImg)+'")  center center no-repeat',
             'background-size': 'cover'
         });
 
