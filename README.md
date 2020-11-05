@@ -49,8 +49,7 @@
 </a>
 
 <a href="https://github.com/sky5454" target="_blank">
-    <img width=50 src="https://avatars2.githubusercontent.com/u/12370628?s=460&v=4"/>
-</a>
+    <img width=50 src="https://avatars2.githubusercontent.com/u/12370628?s=460&v=4"/></a>
 
 # Author
 
