@@ -177,7 +177,7 @@ if (initCheck()) {
         homeTopImg: [
             "https://images.cnblogs.com/cnblogs_com/cherrypill/1617340/o_20101313040283092647_p0_master1200.jpg"
         ],
-        homeBannerText: "",
+        homeBannerText: " ",
         homeBannerTextType: "jinrishici",
         essayTopImg: [
             "https://images.cnblogs.com/cnblogs_com/cherrypill/1617340/o_2003111307191.jpg"
