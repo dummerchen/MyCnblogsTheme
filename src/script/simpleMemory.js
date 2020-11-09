@@ -100,7 +100,7 @@ if (initCheck()) {
         blogStartDate: "2020-01-01",
         menuCustomList: {},
         menuNavList: [],
-        menuUserInfoBgImg: '',
+        menuUserInfoBgImg: 'https://images.cnblogs.com/cnblogs_com/cherrypill/1617340/o_201013130127fanstasy.jpg',
         webpageTitleOnblur: "(oﾟvﾟ)ノ Hi",
         webpageTitleOnblurTimeOut: 500,
         webpageTitleFocus: "(*´∇｀*) 欢迎回来！",
@@ -141,7 +141,8 @@ if (initCheck()) {
             color: 'rgba(255,255,255, .2)',
             clearOffset: 0.3
         },
-        essayTopAnimationRendered: true,
+        // 不改为false这个和鼠标点击特效冲突了
+        essayTopAnimationRendered: false,
         essayTopAnimation: {
             triW: 14,
             triH: 20,
@@ -188,7 +189,7 @@ if (initCheck()) {
             fontFamily: "'Ubuntu Mono',monospace",
             fontSize: "14px",
         },
-        codeMaxHeight: false,
+        codeMaxHeight: true,
         codeLineNumber: false,
         essayTitleStyle: false,
         essaySuffix: {
@@ -226,7 +227,7 @@ if (initCheck()) {
             alipay: ''
         },
         weChatOfficialAccounts: '',
-        advertising: true,
+        advertising: false,
     };
 
     window.cnblogsConfigDefault.hook = {
