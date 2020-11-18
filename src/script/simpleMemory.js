@@ -88,7 +88,7 @@ if (initCheck()) {
         '    <a class="scroll-left" href="javascript:void(0);" data-offset="-45">'+        
         '        <span class="hidden">Scroll Left</span>'+        
         '        <i class="scroll-left-icon iconfont icon-fanhui"></i>'+   
-        '    </a>' 
+        '    </a>' + 
         '    <a class="scroll-right" href="javascript:void(0);" data-offset="-45">'+        
         '        <span class="hidden">Scroll Right</span>'+        
         '        <i class="scroll-right-icon iconfont icon-fanhui"></i>'+    
