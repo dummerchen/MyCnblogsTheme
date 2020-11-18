@@ -85,6 +85,14 @@ if (initCheck()) {
         '        <span class="hidden">Scroll Down</span>' +
         '        <i class="scroll-down-icon iconfont icon-fanhui"></i>' +
         '    </a>' +
+        '    <a class="scroll-left" href="javascript:void(0);" data-offset="-45">'+        
+        '        <span class="hidden">Scroll Left</span>'+        
+        '        <i class="scroll-left-icon iconfont icon-fanhui"></i>'+   
+        '    </a>' 
+        '    <a class="scroll-right" href="javascript:void(0);" data-offset="-45">'+        
+        '        <span class="hidden">Scroll Right</span>'+        
+        '        <i class="scroll-right-icon iconfont icon-fanhui"></i>'+    
+        '    </a>'+
         '</div>' +
         '<div id="loading"></div>'  +
         '<div id="bottomProgressBar"></div>' +
@@ -139,7 +147,7 @@ if (initCheck()) {
             radius: 15,
             density: 0.2,
             color: 'rgba(255,255,255, .2)',
-            clearOffset: 0.3
+            clearOffset: 0.7
         },
         // 不改为false这个和鼠标点击特效冲突了
         essayTopAnimationRendered: false,

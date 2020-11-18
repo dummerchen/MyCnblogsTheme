@@ -903,9 +903,14 @@ function Base() {
 
         // 设置主页图片
         let homeTopImg = window.cnblogsConfig.homeTopImg, bgImg;
+        // 将生成的随机数导出，方便实现上下张图片效果
+        Pic_Num=tools.randomNum(0, homeTopImg.length - 1)
+        Pic_Len=homeTopImg.length
 
+        console.log(Pic_Len)
+        
         homeTopImg.length > 0 ?
-            (homeTopImg.length > 1 ? bgImg = homeTopImg[tools.randomNum(0, homeTopImg.length - 1)] : bgImg = homeTopImg[0])
+            (homeTopImg.length > 1 ? bgImg = homeTopImg[Pic_Num] : bgImg = homeTopImg[0])
             : bgImg = "";
         $('.main-header').css({
             'background': 'url("'+encodeURI(bgImg)+'")  center center no-repeat',
@@ -926,7 +931,27 @@ function Base() {
         $('.scroll-down').click(function () {
             let endScroll;
             endScroll = $('#home').offset().top + 10; tools.actScroll(endScroll, 1000);});
-
+            
+        // 点击向右切换图片
+        $('.scroll-right').click(function () 
+        {
+            Pic_Num=(Pic_Num+1)%Pic_Len
+            console.log(Pic_Num)
+            $('.main-header').css({
+                'background': 'url("'+encodeURI(bgImg[Pic_Num])+'")  center center no-repeat',
+                'background-size': 'cover'
+            });
+        });
+        // 点击向左切换图片
+        $('.scroll-left').click(function () 
+        {
+            Pic_Num=(Pic_Num-1+Pic_Len)%Pic_Len;
+            console.log(Pic_Num)
+            $('.main-header').css({
+                'background': 'url("'+encodeURI(bgImg[Pic_Num])+'")  center center no-repeat',
+                'background-size': 'cover'
+            });
+        });
         // 设置右下角菜单
         timeIds.setHomeRightMenuTId = window.setInterval( bndongJs.addHomeRightMenu, 1000 );
 
@@ -1268,10 +1293,12 @@ function Base() {
         // 将非主页头图改为和主页相同
         // let essayTopImg = window.cnblogsConfig.essayTopImg,
         //     bgImg;
-        let essayTopImg = window.cnblogsConfig.homeTopImg,
-        bgImg;
+        let essayTopImg = window.cnblogsConfig.homeTopImg,bgImg;
+        Pic_Num=tools.randomNum(0, essayTopImg.length - 1)
+        Pic_Len=essayTopImg.length
+
         essayTopImg.length > 0 ?
-            (essayTopImg.length > 1 ? bgImg = essayTopImg[tools.randomNum(0, essayTopImg.length - 1)] : bgImg = essayTopImg[0])
+            (essayTopImg.length > 1 ? bgImg = essayTopImg[Pic_Num] : bgImg = essayTopImg[0])
             : bgImg = "";
 
 
