@@ -9,6 +9,7 @@ function Base() {
     const bndongJs     = this,
           tools        = new myTools,
           isHome       = !!$('#topics').length;
+          All_Img_List =window.cnblogsConfig.homeTopImg
 
     let progressBar  = new ToProgress(window.cnblogsConfig.progressBar, '#bottomProgressBar'), // 进度条
         temScroll    = 0,  // 上一次页面滚动位置
@@ -902,20 +903,18 @@ function Base() {
     this.homeInit = function() {
 
         // 设置主页图片
-        let homeTopImg = window.cnblogsConfig.homeTopImg, bgImg;
+        // let homeTopImg = window.cnblogsConfig.homeTopImg, bgImg;
         // 将生成的随机数导出，方便实现上下张图片效果
-        Pic_Num=tools.randomNum(0, homeTopImg.length - 1)
-        Pic_Len=homeTopImg.length
-
-        console.log(Pic_Len)
+        Pic_Num=tools.randomNum(0, All_Img_List.length - 1)
         
-        homeTopImg.length > 0 ?
-            (homeTopImg.length > 1 ? bgImg = homeTopImg[Pic_Num] : bgImg = homeTopImg[0])
-            : bgImg = "";
+        // homeTopImg.length > 0 ?
+        //     (homeTopImg.length > 1 ? bgImg = homeTopImg[Pic_Num] : bgImg = homeTopImg[0])
+        //     : bgImg = "";
         $('.main-header').css({
-            'background': 'url("'+encodeURI(bgImg)+'")  center center no-repeat',
+            'background': 'url("'+encodeURI(All_Img_List[Pic_Num])+'")  center center no-repeat',
             'background-size': 'cover'
         });
+        console.log(All_Img_List.length)
 
         bndongJs.setHitokoto();
         bndongJs.scrollMonitor();
@@ -938,17 +937,17 @@ function Base() {
             Pic_Num=(Pic_Num+1)%Pic_Len
             console.log(Pic_Num)
             $('.main-header').css({
-                'background': 'url("'+encodeURI(bgImg[Pic_Num])+'")  center center no-repeat',
+                'background': 'url("'+encodeURI(All_Img_List[Pic_Num])+'")  center center no-repeat',
                 'background-size': 'cover'
             });
         });
         // 点击向左切换图片
         $('.scroll-left').click(function () 
         {
-            Pic_Num=(Pic_Num-1+Pic_Len)%Pic_Len;
+            Pic_Num=(Pic_Num-1+All_Img_List.length)%All_Img_List.length;
             console.log(Pic_Num)
             $('.main-header').css({
-                'background': 'url("'+encodeURI(bgImg[Pic_Num])+'")  center center no-repeat',
+                'background': 'url("'+encodeURI(All_Img_List[Pic_Num])+'")  center center no-repeat',
                 'background-size': 'cover'
             });
         });
@@ -1155,9 +1154,28 @@ function Base() {
         //设置滚动
         $('.scroll-down').click(function () {
             let endScroll;
-            console.log("???");
             endScroll = $('#home').offset().top + 10; tools.actScroll(endScroll, 1000);});
-            
+        // 点击向右切换图片
+        $('.scroll-right').click(function () 
+        {
+            Pic_Num=(Pic_Num+1)%All_Img_List.length
+            console.log(Pic_Num)
+            $('.main-header').css({
+                'background': 'url("'+encodeURI(All_Img_List[Pic_Num])+'")  center center no-repeat',
+                'background-size': 'cover'
+            });
+        });
+        // 点击向左切换图片
+        $('.scroll-left').click(function () 
+        {
+            Pic_Num=(Pic_Num-1+All_Img_List.length)%All_Img_List.length;
+            console.log(Pic_Num)
+            $('.main-header').css({
+                'background': 'url("'+encodeURI(All_Img_List[Pic_Num])+'")  center center no-repeat',
+                'background-size': 'cover'
+            });
+        });
+
         // 初始化文章目录
         require(['title', 'marvin', 'articleStatement'], function() {
             timeIds.setCatalogTId = window.setInterval( bndongJs.initCatalog, 1000 );
@@ -1293,23 +1311,22 @@ function Base() {
         // 将非主页头图改为和主页相同
         // let essayTopImg = window.cnblogsConfig.essayTopImg,
         //     bgImg;
-        let essayTopImg = window.cnblogsConfig.homeTopImg,bgImg;
-        Pic_Num=tools.randomNum(0, essayTopImg.length - 1)
-        Pic_Len=essayTopImg.length
+        //let essayTopImg = window.cnblogsConfig.homeTopImg,bgImg;
+        Pic_Num=tools.randomNum(0, All_Img_List.length - 1)
 
-        essayTopImg.length > 0 ?
-            (essayTopImg.length > 1 ? bgImg = essayTopImg[Pic_Num] : bgImg = essayTopImg[0])
-            : bgImg = "";
-
+        // essayTopImg.length > 0 ?
+        //     (essayTopImg.length > 1 ? bgImg = essayTopImg[Pic_Num] : bgImg = essayTopImg[0])
+        //     : bgImg = "";
 
         $('.main-header').css({
             'height': '40vh',
-            'background': 'url("'+encodeURI(bgImg)+'")  center center no-repeat',
+            'background': 'url("'+encodeURI(All_Img_List[Pic_Num])+'")  center center no-repeat',
             'background-size': 'cover'
         });
 
+        console.log(All_Img_List.length)
+
         $('#homeTopTitle').hide();
-        //$('.scroll-down').hide();
         $('#home').css('margin-top', '40vh');
         $('#cb_post_title_url').addClass('post-del-title');
 
