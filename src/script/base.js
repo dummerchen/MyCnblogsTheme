@@ -903,13 +903,8 @@ function Base() {
     this.homeInit = function() {
 
         // 设置主页图片
-        // let homeTopImg = window.cnblogsConfig.homeTopImg, bgImg;
-        // 将生成的随机数导出，方便实现上下张图片效果
         Pic_Num=tools.randomNum(0, All_Img_List.length - 1)
-        
-        // homeTopImg.length > 0 ?
-        //     (homeTopImg.length > 1 ? bgImg = homeTopImg[Pic_Num] : bgImg = homeTopImg[0])
-        //     : bgImg = "";
+ 
         $('.main-header').css({
             'background': 'url("'+encodeURI(All_Img_List[Pic_Num])+'")  center center no-repeat',
             'background-size': 'cover'
@@ -934,7 +929,7 @@ function Base() {
         // 点击向右切换图片
         $('.scroll-right').click(function () 
         {
-            Pic_Num=(Pic_Num+1)%Pic_Len
+            Pic_Num=(Pic_Num+1)%All_Img_List
             console.log(Pic_Num)
             $('.main-header').css({
                 'background': 'url("'+encodeURI(All_Img_List[Pic_Num])+'")  center center no-repeat',
@@ -1313,10 +1308,6 @@ function Base() {
         //     bgImg;
         //let essayTopImg = window.cnblogsConfig.homeTopImg,bgImg;
         Pic_Num=tools.randomNum(0, All_Img_List.length - 1)
-
-        // essayTopImg.length > 0 ?
-        //     (essayTopImg.length > 1 ? bgImg = essayTopImg[Pic_Num] : bgImg = essayTopImg[0])
-        //     : bgImg = "";
 
         $('.main-header').css({
             'height': '40vh',
