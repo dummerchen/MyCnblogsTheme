@@ -72,6 +72,10 @@ if (initCheck()) {
         '</div>' +
         '<div class="main-header">' +
         '    <canvas id="notHomeTopCanvas"></canvas>' +
+        '    <div class="swiper-container">'+
+        '       <div class="swiper-wrapper">'+
+        '       </div>'+
+        '    </div>'+
         '    <div class="vertical">' +
         '        <div class="main-header-content inner">' +
         '            <h1 class="page-title" id="homeTopTitle"></h1>' +

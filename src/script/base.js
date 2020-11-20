@@ -904,11 +904,17 @@ function Base() {
 
         // 设置主页图片
         Pic_Num=tools.randomNum(0, All_Img_List.length - 1)
- 
-        $('.main-header').css({
-            'background': 'url("'+encodeURI(All_Img_List[Pic_Num])+'")  center center no-repeat',
-            'background-size': 'cover'
-        });
+        
+        $(".swiper-wrapper").append('<div class="swiper-slide" style="background: url(\''+ All_Img_List[num] +'\') center center / cover no-repeat;overflow:hidden;"></div>')
+        for(var i=(Pic_Num+1)%(All_Img_List.length);i!=Pic_Num;i=(i+1)%All_Img_List.length)
+        {
+            let t='<div class="swiper-slide" style="background: url(\''+ All_Img_List[i] +'\') center center / cover no-repeat;overflow:hidden;"></div>'
+            $(".swiper-wrapper").append(t)
+        }
+        // $('.main-header').css({
+        //     'background': 'url("'+encodeURI(All_Img_List[Pic_Num])+'")  center center no-repeat',
+        //     'background-size': 'cover'
+        // });
         console.log(All_Img_List.length)
 
         bndongJs.setHitokoto();
@@ -921,31 +927,42 @@ function Base() {
         bndongJs.setEntryPost();
         bndongJs.setPostConImg();
 
+        var myswiper=new Swiper('.swiper-container',{
+            navigation:{
+                nextEl: '.scroll-right',
+                prevEl: '.scroll-left',
+            },
+            loop: true,
+            autoplay:{
+                delay:5000,
+            },
+        })
         // 头图点击滚动到内容位置
         $('.scroll-down').click(function () {
             let endScroll;
             endScroll = $('#home').offset().top + 10; tools.actScroll(endScroll, 1000);});
             
-        // 点击向右切换图片
-        $('.scroll-right').click(function () 
-        {
-            Pic_Num=(Pic_Num+1)%All_Img_List.length
-            console.log(Pic_Num)
-            $('.main-header').css({
-                'background': 'url("'+encodeURI(All_Img_List[Pic_Num])+'")  center center no-repeat',
-                'background-size': 'cover'
-            });
-        });
-        // 点击向左切换图片
-        $('.scroll-left').click(function () 
-        {
-            Pic_Num=(Pic_Num-1+All_Img_List.length)%All_Img_List.length;
-            console.log(Pic_Num)
-            $('.main-header').css({
-                'background': 'url("'+encodeURI(All_Img_List[Pic_Num])+'")  center center no-repeat',
-                'background-size': 'cover'
-            });
-        });
+        // // 点击向右切换图片
+        // $('.scroll-right').click(function () 
+        // {
+        //     Pic_Num=(Pic_Num+1)%All_Img_List.length
+        //     console.log(Pic_Num)
+        //     $('.main-header').css({
+        //         'background': 'url("'+encodeURI(All_Img_List[Pic_Num])+'")  center center no-repeat',
+        //         'background-size': 'cover'
+        //     });
+        // });
+        // // 点击向左切换图片
+        // $('.scroll-left').click(function () 
+        // {
+        //     Pic_Num=(Pic_Num-1+All_Img_List.length)%All_Img_List.length;
+        //     console.log(Pic_Num)
+        //     $('.main-header').css({
+        //         'background': 'url("'+encodeURI(All_Img_List[Pic_Num])+'")  center center no-repeat',
+        //         'background-size': 'cover'
+        //     });
+        // });
+        
         // 设置右下角菜单
         timeIds.setHomeRightMenuTId = window.setInterval( bndongJs.addHomeRightMenu, 1000 );
 
@@ -1150,26 +1167,24 @@ function Base() {
         $('.scroll-down').click(function () {
             let endScroll;
             endScroll = $('#home').offset().top + 10; tools.actScroll(endScroll, 1000);});
-        // 点击向右切换图片
-        $('.scroll-right').click(function () 
-        {
-            Pic_Num=(Pic_Num+1)%All_Img_List.length
-            console.log(Pic_Num)
-            $('.main-header').css({
-                'background': 'url("'+encodeURI(All_Img_List[Pic_Num])+'")  center center no-repeat',
-                'background-size': 'cover'
-            });
-        });
-        // 点击向左切换图片
-        $('.scroll-left').click(function () 
-        {
-            Pic_Num=(Pic_Num-1+All_Img_List.length)%All_Img_List.length;
-            console.log(Pic_Num)
-            $('.main-header').css({
-                'background': 'url("'+encodeURI(All_Img_List[Pic_Num])+'")  center center no-repeat',
-                'background-size': 'cover'
-            });
-        });
+        // // 点击向右切换图片
+        // $('.scroll-right').click(function () 
+        // {
+        //     Pic_Num=(Pic_Num+1)%All_Img_List.length
+        //     $('.main-header').css({
+        //         'background': 'url("'+encodeURI(All_Img_List[Pic_Num])+'")  center center no-repeat',
+        //         'background-size': 'cover'
+        //     });
+        // });
+        // // 点击向左切换图片
+        // $('.scroll-left').click(function () 
+        // {
+        //     Pic_Num=(Pic_Num-1+All_Img_List.length)%All_Img_List.length;
+        //     $('.main-header').css({
+        //         'background': 'url("'+encodeURI(All_Img_List[Pic_Num])+'")  center center no-repeat',
+        //         'background-size': 'cover'
+        //     });
+        // });
 
         // 初始化文章目录
         require(['title', 'marvin', 'articleStatement'], function() {
@@ -1303,17 +1318,19 @@ function Base() {
      * 设置非主页头图
      */
     this.setNotHomeTopImg = function() {
-        // 将非主页头图改为和主页相同
-        // let essayTopImg = window.cnblogsConfig.essayTopImg,
-        //     bgImg;
-        //let essayTopImg = window.cnblogsConfig.homeTopImg,bgImg;
         Pic_Num=tools.randomNum(0, All_Img_List.length - 1)
 
-        $('.main-header').css({
-            'height': '40vh',
-            'background': 'url("'+encodeURI(All_Img_List[Pic_Num])+'")  center center no-repeat',
-            'background-size': 'cover'
-        });
+        $(".swiper-wrapper").append('<div class="swiper-slide" style="background: url(\''+ All_Img_List[num] +'\') center center / cover no-repeat;overflow:hidden;"></div>')
+        for(var i=(Pic_Num+1)%(All_Img_List.length);i!=Pic_Num;i=(i+1)%All_Img_List.length)
+        {
+            let t='<div class="swiper-slide" style="background: url(\''+ All_Img_List[i] +'\') center center / cover no-repeat;overflow:hidden;"></div>'
+            $(".swiper-wrapper").append(t)
+        }
+        // $('.main-header').css({
+        //     'height': '40vh',
+        //     'background': 'url("'+encodeURI(All_Img_List[Pic_Num])+'")  center center no-repeat',
+        //     'background-size': 'cover'
+        // });
 
         console.log(All_Img_List.length)
 
