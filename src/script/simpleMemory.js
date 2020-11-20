@@ -4,7 +4,7 @@
  * @author: BNDong, dbnuo@foxmail.com
  **/
 if (initCheck()) {
-
+    
     var sidebarHtml =
         '<div class="container">' +
         '    <div class="menu-wrap optiscroll" id="menuWrap" style="display:none">' +

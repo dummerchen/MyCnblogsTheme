@@ -11,6 +11,7 @@ function Base() {
           isHome       = !!$('#topics').length;
           All_Img_List =window.cnblogsConfig.homeTopImg
 
+
     let progressBar  = new ToProgress(window.cnblogsConfig.progressBar, '#bottomProgressBar'), // 进度条
         temScroll    = 0,  // 上一次页面滚动位置
 
@@ -926,7 +927,7 @@ function Base() {
         bndongJs.setHomePost();
         bndongJs.setEntryPost();
         bndongJs.setPostConImg();
-
+        var Swiper=require(['swiper']);
         var myswiper=new Swiper('.swiper-container',{
             navigation:{
                 nextEl: '.scroll-right',

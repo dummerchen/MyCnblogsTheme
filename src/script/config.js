@@ -57,6 +57,7 @@ require.config({
         optiscroll_ToProgress_rotate: setFileNameMin('optiscroll_ToProgress_rotate.min', 'js'),
         //-- 非主页头图动画
         TweenMax_MyTween: setFileNameMin('TweenMax_MyTween.min', 'js'),
+        swiper: setFileNameMin('swiper','js'),
     },
     shim:{
         optiscroll: {
