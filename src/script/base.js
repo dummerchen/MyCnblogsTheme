@@ -929,7 +929,7 @@ function Base() {
         // 点击向右切换图片
         $('.scroll-right').click(function () 
         {
-            Pic_Num=(Pic_Num+1)%All_Img_List
+            Pic_Num=(Pic_Num+1)%All_Img_List.length
             console.log(Pic_Num)
             $('.main-header').css({
                 'background': 'url("'+encodeURI(All_Img_List[Pic_Num])+'")  center center no-repeat',

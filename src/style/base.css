@@ -1,3 +1,91 @@
+
+/*设置文章后面的背景*/
+#bgCanvas {
+    background-image: url(https://yingserver.cn/open/acgimg/acgurl.php);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 1;
+}
+
+#cnblogs_post_body h1 {
+    text-align:center;
+    font-family:'Playball','Long Cang',cursive;
+    font-size: 40px;
+    font-weight: normal;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+#cnblogs_post_body h2 {
+    font-size:30px;
+    text-align:center;
+    font-style:italic;
+    font-weight:normal;
+    font-family:'Playball','Long Cang',cursive;
+}
+#cnblogs_post_body h2:after {
+    border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    height: 1px;
+}
+/*隐藏踩*/
+#rightBuryit
+{
+    display: none!important;
+}
+#div_digg {
+    display:none!important;
+}
+#commentform_title a 
+{
+    display: none;
+}
+#themeInfo
+{
+    display: none !important;
+}
+
+.scroll-left {
+    display: block;
+    position: absolute;
+    z-index: 100;
+    bottom: 50%;
+    left: 20px;
+    margin-left: 0px;
+    width: 34px;
+    height: 34px;
+    font-size: 34px;
+    text-align: center;
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-animation: bounce 4s 2s infinite;
+    animation: bounceleft 4s 2s infinite;
+    text-decoration: none!important;
+}
+.scroll-right {
+    display: block;
+    position: absolute;
+    z-index: 100;
+    bottom: 50%;
+    right: 0%;
+    margin-right: 25px;
+    width: 34px;
+    height: 34px;
+    font-size: 34px;
+    text-align: center;
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -webkit-animation: bounce 4s 2s infinite;
+    animation: bounceright 4s 2s infinite;
+    text-decoration: none!important;
+}
+
 *, .Cal {
     padding: 0
 }
@@ -2107,7 +2195,7 @@ div#tbCommentBodyPreview {
 .main-header {
     display: table;
     width: 100%;
-    height: 100vh;
+    height: 100%!important;
     max-height: 100vh;
     text-align: center;
     background-size: cover;
@@ -2129,7 +2217,9 @@ div#tbCommentBodyPreview {
 .page-title, .sb-title {
     letter-spacing: -1px;
     font-weight: 700;
-    color: #fff;
+    font-style:italic;
+    color: #ffffffe0;
+    font-family:'Playball','Long Cang',cursive;
     -webkit-animation: fade-in-down 1s;
     animation: fade-in-down 1s both;
     -webkit-animation-delay: .6s;
@@ -2139,7 +2229,6 @@ div#tbCommentBodyPreview {
 
 .page-title {
     font-size: 5rem;
-    font-family: 'Playball', cursive;
 }
 
 .sb-title {
@@ -2202,7 +2291,7 @@ div#tbCommentBodyPreview {
     text-decoration: none !important
 }
 
-.scroll-down-icon {
+.scroll-down-icon ,.scroll-left-icon, .scroll-right-icon{
     color: rgba(255, 255, 255, .6);
     font-size: 34px !important;
     position: relative;
@@ -2248,6 +2337,63 @@ div#tbCommentBodyPreview {
     30% {
         -webkit-transform: translateY(-5px) rotate(-90deg);
         transform: translateY(-5px) rotate(-90deg)
+    }
+}
+@-webkit-keyframes bounceleft{
+    0%,10%,25%,40%,50%{
+        -webkit-transform:translateX(0) rotate(0deg);
+        transform:translateY(0) rotate(0deg)
+    }
+    20%{
+        -webkit-transform:translateX(-10px) rotate(0deg);
+        transform:translateX(-10px) rotate(0deg)
+    }
+    30%{
+        -webkit-transform:translateX(-5px) rotate(0deg);
+        transform:translateX(-5px) rotate(0deg)
+    }
+}
+    
+@keyframes bounceleft{
+    0%,10%,25%,40%,50%{
+        -webkit-transform:translateX(0) rotate(0deg);
+        transform:translateX(0) rotate(0deg)}
+    20%{
+        -webkit-transform:translateX(-10px) rotate(0deg);
+        transform:translateX(-10px) rotate(0deg)
+    }
+    30%{
+        -webkit-transform:translateX(-5px) rotate(0deg);
+        transform:translateX(-5px) rotate(0deg)
+    }
+}
+
+@-webkit-keyframes bounceright{
+    0%,10%,25%,40%,50%{
+        -webkit-transform:translateX(0) rotate(180deg);
+        transform:translateX(0) rotate(180deg)
+    }
+    20%{
+        -webkit-transform:translateX(10px) rotate(180deg);
+        transform:translateX(10px) rotate(180deg)
+    }
+    30%{
+        -webkit-transform:translateX(5px) rotate(180deg);
+        transform:translateX(5px) rotate(180deg)
+    }
+}
+    
+@keyframes bounceright{
+    0%,10%,25%,40%,50%{
+        -webkit-transform:translateX(0) rotate(180deg);
+        transform:translateX(0) rotate(180deg)}
+    20%{
+        -webkit-transform:translateX(10px) rotate(180deg);
+        transform:translateX(10px) rotate(180deg)
+    }
+    30%{
+        -webkit-transform:translateX(5px) rotate(180deg);
+        transform:translateX(5px) rotate(180deg)
     }
 }
 
@@ -3449,14 +3595,9 @@ div#green_channel img {
     }
 }
 
-.essaySuffix-eof {
-    font-weight: 700;
-    font-size: 16px;
-    text-align: center;
-    color: #ddd;
-    text-indent: 0
+#essaySuffix-eof{
+    display:none;
 }
-
 .essaySuffix-box {
     font-family: Microsoft YaHei, 微软雅黑, MicrosoftJhengHei, 华文细黑, STHeiti, MingLiu;
     font-size: 14px;
