@@ -905,7 +905,7 @@ function Base() {
         // 设置主页图片
         Pic_Num=tools.randomNum(0, All_Img_List.length - 1)
         
-        $(".swiper-wrapper").append('<div class="swiper-slide" style="background: url(\''+ All_Img_List[num] +'\') center center / cover no-repeat;overflow:hidden;"></div>')
+        $(".swiper-wrapper").append('<div class="swiper-slide" style="background: url(\''+ All_Img_List[Pic_Num] +'\') center center / cover no-repeat;overflow:hidden;"></div>')
         for(var i=(Pic_Num+1)%(All_Img_List.length);i!=Pic_Num;i=(i+1)%All_Img_List.length)
         {
             let t='<div class="swiper-slide" style="background: url(\''+ All_Img_List[i] +'\') center center / cover no-repeat;overflow:hidden;"></div>'
@@ -962,7 +962,7 @@ function Base() {
         //         'background-size': 'cover'
         //     });
         // });
-        
+
         // 设置右下角菜单
         timeIds.setHomeRightMenuTId = window.setInterval( bndongJs.addHomeRightMenu, 1000 );
 
@@ -1320,7 +1320,7 @@ function Base() {
     this.setNotHomeTopImg = function() {
         Pic_Num=tools.randomNum(0, All_Img_List.length - 1)
 
-        $(".swiper-wrapper").append('<div class="swiper-slide" style="background: url(\''+ All_Img_List[num] +'\') center center / cover no-repeat;overflow:hidden;"></div>')
+        $(".swiper-wrapper").append('<div class="swiper-slide" style="background: url(\''+ All_Img_List[Pic_Num] +'\') center center / cover no-repeat;overflow:hidden;"></div>')
         for(var i=(Pic_Num+1)%(All_Img_List.length);i!=Pic_Num;i=(i+1)%All_Img_List.length)
         {
             let t='<div class="swiper-slide" style="background: url(\''+ All_Img_List[i] +'\') center center / cover no-repeat;overflow:hidden;"></div>'
